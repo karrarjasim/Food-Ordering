@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
         return Inertia::render('Home', [
             'restaurants' => Restaurant::get(),
-            'restaurant_name' => auth()->user()->restaurant->name,
+            'restaurant_name' => auth()->user()?->restaurant?->name,
         ]);
     }
 }
